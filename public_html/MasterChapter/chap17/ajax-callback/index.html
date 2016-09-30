@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="../../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		$('div').load('random-num.php', callback);
+	});
+});
+
+function callback() {
+	alert('AJAX Done');
+}
+</script>
+</head>
+
+<body>
+ 	<div></div>
+ 	<button>อ่านค่าเลขสุ่มจากเซิร์ฟเวอร์</button>
+</body>
+</html>

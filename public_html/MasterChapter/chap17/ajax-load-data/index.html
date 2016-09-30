@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX: load - data</title>
+<script src="../../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var data = "name=" + encodeURIComponent($(':text').val());
+		data += "&address=" + encodeURIComponent($('textarea').val());
+		data += "&payment=" + 
+ 				encodeURIComponent($(':radio:checked').val());
+		
+		if($('[value=บัตรเครดิต]').is(':checked')) {
+			data += "&card=" + $('select').val();
+		}
+		
+		/* กรณีกำหนดข้อมูลแบบ JSON
+		var n = $('#name').val();
+		var ad = $('textarea').val();
+		var p = $('[name=payment]:checked').val();
+		var data = {name: n, address: ad, payment: p};
+		
+		if($('[value=บัตรเครดิต]').is(':checked')) {
+			 data.card = $('select').val();
+		}
+		*/
+					
+		$('#result').load('ajax-form-echo.php', data);
+		
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+	ชื่อ:<br> <input type="text" name="name"><br>
+	ที่อยู่:<br> <textarea name="address"></textarea><br>
+     วิธีชำระเงิน:<br>
+     <input type="radio" name="payment" value="โอนผ่านธนาคาร" checked>
+ 		โอนผ่านธนาคาร<br>
+     <input type="radio" name="payment" value="บัตรเครดิต">บัตรเครดิต
+    	<select name="card">
+    		<option>VISA</option>
+        	<option>MasterCard</option>
+     </select>
+     <button type="button">ส่งข้อมูล</button>
+</form>
+<hr>
+<div id="result"></div>
+</body>
+</html>

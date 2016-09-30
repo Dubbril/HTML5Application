@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX: indicator</title>
+<style>
+	#indicator {
+		background: #ffc;
+		color: red;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		z-index: 10000;
+		width: auto;
+		padding: 5px;
+		visibility: hidden;
+	}
+	#indicator > img {
+		vertical-align: text-bottom;
+	}
+</style>
+<script src="../../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		$.ajax({
+			url: 'indicator.php',
+			beforeSend: ajaxSend,
+			success: callback,
+			complete: ajaxComplete,
+			timeout: '5000',
+			error: ajaxError
+		});
+	});
+});
+function ajaxSend() {
+	$('#indicator').css('visibility', 'visible');
+}
+function callback(result) {
+	alert('Download Complete!');
+}
+function ajaxComplete() {
+	$('#indicator').css('visibility', 'hidden');	
+}
+function ajaxError() {
+	alert('Download Error!');
+}
+</script>
+</head>
+
+<body>
+ 	<button type="button">โหลดข้อมูล</button>
+ 	<div id="indicator">
+	 	<img src="ajax-indicator.gif">
+ 		กำลังโหลด...
+ 	</div>
+</body>
+</html>

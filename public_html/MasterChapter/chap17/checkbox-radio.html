@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>checkbox & radio</title>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$(':button').click(function() {
+		var text = "สิ่งที่ต้องการศึกษา:\n";
+		$(':checkbox:checked').each(function() {
+			text += $(this).val() + "\n";
+		});
+
+		text += "\nเบราเซอร์ที่ใช้บ่อยที่สุด:\n";
+		$(':radio:checked').each(function() {
+			text += $(this).val() + "\n";
+		});
+		alert(text);
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+	ท่านต้องการศึกษาสิ่งใดบ้าง:<br>
+ 	<input type="checkbox" name="html5" value="HTML5">HTML5
+    	<input type="checkbox" name="css3" value="CSS3">CSS3
+    	<input type="checkbox" name="jquery" value="jQuery">jQuery
+ 	<br><br>
+    	เว็บเบราเซอร์ที่ท่านใช้บ่อยที่สุด:<br>
+    	<input type="radio" name="browser" value="IE">IE
+    	<input type="radio" name="browser" value="Firefox">Firefox
+    	<input type="radio" name="browser" value="Chrome">Chrome 
+    	<br><br>   
+    	<button type="button">ตกลง</button>
+</form>
+</body>
+</html>

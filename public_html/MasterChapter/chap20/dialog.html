@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Mobile</title>
+<link rel="stylesheet" href="../jqm/jquery.mobile-1.3.1.min.css">
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jqm/jquery.mobile-1.3.1.min.js"> </script>
+</head>
+
+<body>
+<div data-role="page" data-theme="b">
+	<div data-role="header">
+    		<h1>jQuery Mobile</h1>
+    		<a href="#dlg-login" data-role="button" data-mini="true" 
+ 			data-theme="e" class="ui-btn-right">เข้าสู่ระบบ</a>
+    </div>
+    <div data-role="content">
+    		การสร้างเว็บไซต์ นอกจากเราต้องรู้เกี่ยวกับ 
+    		<a href="#dlg-html5" data-role="button" data-inline="true" 
+ 			data-mini="true">HTML5</a> และ
+        	<a href="#dlg-css3" data-role="button" data-inline="true" 
+ 			data-mini="true">CSS3</a> แล้ว เราควรศึกษาการใช้ 
+        	<a href="#dlg-jquery" data-role="button" data-inline="true" 
+ 			data-mini="true">jQuery</a> ควบคู่กันไปด้วย
+    </div>
+</div>
+ 
+<div id="dlg-html5" data-role="dialog" data-theme="c">
+  	<div data-role="header" data-theme="b"><h1>HTML5</h1></div>
+	<div data-role="content">HTML5 คือ...</div>
+</div>
+
+<div id="dlg-css3" data-role="dialog" data-theme="c">
+  	<div data-role="header" data-theme="b"><h1>CSS3</h1></div>
+	<div data-role="content">CSS3 คือ...</div>
+</div>
+
+<div id="dlg-jquery" data-role="dialog" data-theme="c">
+  	<div data-role="header" data-theme="b"><h1>jQuery</h1></div>
+	<div data-role="content">jQuery คือ...</div>
+</div>
+
+<div id="dlg-login" data-role="dialog" data-theme="b">
+ 	<div data-role="header" data-theme="b"><h1>เข้าสู่ระบบ</h1></div>
+	<div data-role="content">
+	<form method="post" action="formecho-jqm.php">
+    	 	<input type="text" name="login" placeholder="Login" 
+ 			data-mini="true" >
+        	<input type="password" name="pswd" placeholder="Password"  
+ 			data-mini="true">
+      	 	<button type="submit" data-inline="true" 
+ 			data-mini="true">Submit</button>
+ 	</form>
+	</div>
+</div>
+</body>
+</html>

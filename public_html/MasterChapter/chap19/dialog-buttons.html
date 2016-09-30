@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI: Dialog</title>
+<link href="../jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+<style>
+	#dlg {
+		display: none;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jquery-ui-1.10.3.custom.min.js"> </script>
+<script>
+$(function() {
+	$('button').click(function() {
+		if($(':checked').length == 0) {
+			return;
+		}
+		
+		$('#dlg').dialog({
+			modal: true,
+			buttons: [
+				{text: 'OK', click: deleteProduct}, 
+				{text: 'Cancel', click: closeDialog}
+			]
+		});
+		
+	});
+});
+
+function deleteProduct() {
+	//ลบ <label> ออกไป เพื่อให้ทั้ง checkbox ข้อความชื่อสินค้าถูกลบออกไปด้วย
+	$(':checked').parent().remove();
+	closeDialog();
+}
+
+function closeDialog() {
+	$('#dlg').dialog('close');
+}
+</script>
+</head>
+
+<body>
+<form>
+	รายการสินค้าในรถเข็น: <br>
+	<label><input type="checkbox">สินค้า #1</label><br>
+	<label><input type="checkbox">สินค้า #2</label><br>
+	<label><input type="checkbox">สินค้า #3</label><br>
+	<button type="button">ลบรายการที่เลือก</button>
+    	<div id="dlg">ท่านต้องการลบสินค้าที่เลือกออกจากรถเข็นจริงหรือไม่</div>
+</form>
+</body>
+</html>

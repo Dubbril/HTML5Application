@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Column Layout</title>
+<style>
+	article > section {
+		-moz-column-count: 3;
+		-moz-column-fill: balance;
+		-moz-column-rule: solid 0px gray;
+		-moz-column-gap: 30px;
+		
+		-webkit-column-count: 4;
+		-webkit-column-fill: balance;
+		-webkit-column-rule: solid 0px gray;
+		-webkit-column-gap: 30px;
+		
+		column-count: 3;
+		column-fill: balance;
+		column-rule: solid 0px gray;
+		column-gap: 30px;
+		
+		margin-bottom: 20px;
+	}
+	article > section > img {
+		float: left;
+		margin: 0px 10px 3px 0px;
+		width: 30%;
+	}
+</style>
+</head>
+
+<body>
+<article>
+	<!--
+	<section>
+		Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation semantics (the look and formatting) 
+    	of a document written in a markup language. Its most common application is to style web pages written in HTML and XHTML...
+    	<br>(from: wikipedia.com)   
+    </section>
+	-->
+    <h4>HTML5</h4>
+	<section>
+    	<img src="html5.gif">
+     	HTML5 will be the new standard for HTML.
+		The previous version of HTML, HTML 4.01, came in 1999. The web has changed a lot since then.
+		HTML5 is still a work in progress. However, the major browsers support many of the new HTML5 elements and APIs...
+    	<br>(from: w3schools.com)  		
+	</section>
+    
+	<hr>
+    <h4>นกเพนกวิน</h4>
+    <section>
+   		<img src="penguins.jpg">
+ 		เพนกวิน(Penguin)  เป็นนกชนิดหนึ่งที่บินไม่ได้ มีขนเป็นสีขาว-ดำ สามารถว่ายน้ำได้อย่างคล่องแคล่ว 
+		ชอบอาศัยอยู่ตามสภาพภูมิอากาศที่หนาวเย็น เช่น แถบขั้วโลก  ดำรงชีวิตโดยการกินสัตว์น้ำขนาดเล็กเป็นอาหาร เช่น ตัวเคย, ปลา, ปลาหมึก เป็นต้น
+    </section>
+    
+</article>
+</body>
+</html>

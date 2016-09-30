@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Effect: slideUp() - slideDown()</title>
+<style>
+	#slider {
+		width: 200px;
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		z-index: 1000;
+		display: none;
+		font-size: 16px;
+		background: salmon;
+	}
+	#slider  #title {
+		float: left;
+	}
+	
+	#slider #close {
+		float: right;
+	}
+	#slider #content {
+		background: skyblue;
+	}
+	#slider, #slider div {
+		padding: 3px;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {	
+		$('#slider').slideDown(1000);
+		
+		$('#slider  a').click(function() {
+			$('#slider').slideUp(1000);
+		});
+});
+</script>
+</head>
+
+<body>
+<div id="slider">
+    	<div id="titlebar">
+        	<div id="title">โปรโมชั่นพิเศษ</div>
+    		<div id="close">[<a href=#>ปิด</a>]</div>
+ 	</div>
+ 	<br style="clear: both;">
+ 	<div id="content">3 แถม 1<br>5 แถม 2<br>7 แถม 3</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>overflow</title>
+<style>
+	p {
+		border: double 4px red;
+		width: 200px;
+		height: 60px;
+	}
+	
+	#p1 { overflow: visible; }
+	#p2 { overflow: hidden; }
+	#p3 { overflow: scroll; }
+	#p4, #p5 { overflow: auto; }
+	
+	#p5 { 
+		width: 250px;
+		height: 100px;
+	}
+	span { color: blue; }
+</style>
+</head>
+
+<body>
+ 	<p id="p1">
+    	<span>overflow: visible</span><br>
+		ในกรณีที่เรากำหนดขนาดของอิลิเมนต์ด้วยพร็อปเพอร์ตี้ width/height หรือ min-width/min-height อาจจะทำให้เนื้อหาล้นออกมานอกอิลิเมนต์ได้
+	</p>	<br><br>
+    
+	<p id="p2">
+    	<span>overflow: hidden</span><br>
+		ในกรณีที่เรากำหนดขนาดของอิลิเมนต์ด้วยพร็อปเพอร์ตี้ width/height หรือ min-width/min-height อาจจะทำให้เนื้อหาล้นออกมานอกอิลิเมนต์ได้
+	</p>
+    
+	<p id="p3">
+    	<span>overflow: scroll</span><br>
+		ในกรณีที่เรากำหนดขนาดของอิลิเมนต์ด้วยพร็อปเพอร์ตี้ width/height หรือ min-width/min-height อาจจะทำให้เนื้อหาล้นออกมานอกอิลิเมนต์ได้
+	</p>
+    
+	<p id="p4">
+    	<span>overflow: auto</span><br>
+		ในกรณีที่เรากำหนดขนาดของอิลิเมนต์ด้วยพร็อปเพอร์ตี้ width/height หรือ min-width/min-height อาจจะทำให้เนื้อหาล้นออกมานอกอิลิเมนต์ได้
+	</p>
+    
+	<p id="p5">
+    	<span>overflow: auto</span><br>
+		ในกรณีที่เรากำหนดขนาดของอิลิเมนต์ด้วยพร็อปเพอร์ตี้ width/height หรือ min-width/min-height อาจจะทำให้เนื้อหาล้นออกมานอกอิลิเมนต์ได้
+	</p>
+</body>
+</html>

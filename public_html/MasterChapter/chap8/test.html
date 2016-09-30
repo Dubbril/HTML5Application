@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+<style>
+</style>
+</head>
+
+<body>
+<form method="post" action="form-echo.php">
+<!--
+ 	ท่านใช้เบราเซอร์ใดบ้าง:<br>
+ 	<input type="checkbox" name="ie" value="IE">IE<br>
+ 	<input type="checkbox" name="firefox" value="Firefox">Firefox<br>
+ 	<input type="checkbox" name="chrome" value="Chrome">Chrome<br>
+  	<input type="checkbox" name="safari">Safari<br>
+  	<input type="checkbox" name="opera">Opera<br>
+  	<button>ส่งข้อมูล</button>
+</form>
+
+Login: <input><br>
+Pswd: <input><br><br>
+<input type="checkbox">จัดเก็บข้อมูลไว้ในเครื่องนี้
+
+ท่านใช้เบราเซอร์ใดบ้าง:<br>
+<input type="checkbox">IE<br>
+<input type="checkbox">Firefox<br>
+<input type="checkbox">Chrome<br>
+<input type="checkbox">Safari<br>
+<input type="checkbox">Opera<br>
+
+ท่านใช้เบราเซอร์ใดบ่อยที่สุด:<br>
+<input type="radio">IE<br>
+<input type="radio">Firefox<br>
+<input type="radio">Chrome<br>
+<input type="radio">Safari<br>
+<input type="radio">Opera<br>-->
+<!--
+	อิลิเมนต์ชนิด color: <br>
+	<input type="color" name="color">
+    <br><br>
+    <button>ส่งข้อมูล</button>
+-->
+ <!--   ค้นหา:<input type="text" name="kw"><input type="image" src="go.gif" style="vertical-align: text-bottom;"> -->
+<!--
+ email:<input type="email" name="email" size="40"><br>
+  url: <input type="url" name="url" size="40"><br>
+  tel: <input type="tel" name="tel" size="40"><br>
+  <button>ส่งข้อมูล</button><input type="file" accept="image/*">
+  --> 
+<!--
+   <br>
+	range: <input type="range" name="" min="0" max="100">
+	ไม้ดอกไม้ประดับ:
+	<select name="gardenplant">
+    
+    	<optgroup label="ไม้ดอก">
+        	<option value="กุหลาบ">กุหลาบ</option>
+            <option value="กล้วยไม้">กล้วยไม้</option>
+        </optgroup>
+        
+        <optgroup label="ไม้ประดับ">
+        	<option value="ปรง">ปรง</option>
+            <option value="ปาล์ม">ปาล์ม</option>
+         </optgroup>
+         
+     </select>
+	
+    <input type="submit" value="ข้อความบนปุ่ม">
+    <input type="image" src="ชื่อไฟล์ภาพ"  formmethod="get">
+    <button type="submit" ...แอตทริบิวต์อื่นๆ...>ข้อความบนปุ่ม</button>
+  -->
+<!--
+	<table>
+    <tr valign="top"><td>
+	Single Selection<br>
+	<select name="title">
+    	<option>นาย</option>
+        <option>นาง</option>
+        <option>นางสาว</option>
+     </select>
+     </td>
+<td>
+     Multiple Selection<br>
+     <select multiple>
+     	<option>เลขานุการ</option>
+        <option>การตลาด</option>
+        <option>ฝ่ายขาย</option>
+        <option>ธุรการ</option>
+     </select>
+     </td></tr>
+     </table>
+     -->
+
+ 	ท่านเกิดวันอะไร:<br>
+ 	<input type="radio" name="birthday" value="Sunday" required>อาทิตย์<br>
+ 	<input type="radio" name="birthday" value="Monday">จันทร์<br>
+ 	<input type="radio" name="birthday" value="Tuesday">อังคาร<br>
+     <input type="radio" name="birthday" value="Wednesday">พุธ<br>   
+    <input type="radio" name="birthday" value="Thursday">พฤหัสบดี<br>
+    <input type="radio" name="birthday" value="Friday">ศุกร์<br>
+    <input type="radio" name="birthday" value="Saturday">เสาร์<br> 
+  <br><button>ส่งข้อมูล</button>
+  <!--
+    เพศ:
+    <input type="radio" name="gender" value="Male">ชาย
+    <input type="radio" name="gender" value="Female">หญิง
+    <br>
+    สถานภาพ: 
+    <input type="radio" name="marital" value="Single">โสด
+    <input type="radio" name="marital" value="Married">แต่ง
+    <input type="radio" name="marital" value="divorce">หย่า
+    <br><br>
+  <button>ส่งข้อมูล</button>
+   -->
+  <!--
+  	<br>
+   เงื่อนไข:<br>
+   1. ...<br>
+   2. ...
+   
+   <br><br>
+   <input type="checkbox" required>ยอมรับเงื่อนไข
+   <br><br><br><br><br>
+  <button>ตกลง</button>
+
+  
+  	<select name="title">
+    		<option value="นาย">นาย</option>
+        	<option value="นาง">นาง</option>
+        	<option value="นางสาว">น.ส.</option>
+     </select>
+ 	<input type="text" name="name">
+    	<button>ส่งข้อมูล</button>
+ 
+  
+	ผลไม้ที่ท่านชอบ:<br>
+	<select name="fruits[]" multiple>
+    		<option value="ทุเรียน">ทุเรียน</option>
+        	<option value="มังคุด">มังคุด</option>
+ 			<option value="ละมุ">ละมุด</option>
+            <option value="ลำไย">ลำไย</option>
+     </select><br>
+    <button>ส่งข้อมูล</button>
+ 
+ <select name="gardenplant">
+ 	<optgroup label="ไม้ดอก">
+ 		<option value="กุหลาบ">กุหลาบ</option>
+ 		<option value="กล้วยไม้">กล้วยไม้</option>
+ 	</optgroup>
+ 	<optgroup label="ไม้ประดับ">
+ 		<option value="ปรง">ปรง</option>
+ 		<option value="ปาล์ม">ปาล์ม</option>
+ 	</optgroup>
+</select>
+
+วันที่: <input type="number" name="date" min="1" max="31" 
+ 	placeholder="1-31"><button>ส่งข้อมูล</button>
+
+ระดับเสียง: 0<input type="range" name="volume" 
+ 		min="0" max="10">10
+
+อิลเมนต์ชนิด color:<br>
+<input type="color" name="color">-->
+</form>
+</body>
+</html>

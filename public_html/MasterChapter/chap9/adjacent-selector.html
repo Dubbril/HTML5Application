@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Adjacent Selector</title>
+<style>
+	input[type="radio"][name="card"] + label {
+		color: brown;
+		font-style: italic;
+	}
+	div {
+		padding-left: 20px;
+	}
+</style>
+</head>
+
+<body>
+<form>
+	วิธีชำระเงิน:<br>
+    <input type="radio" name="payment" value="banktransfer"><label>โอนผ่านธนาคาร</label><br>
+    <input type="radio" name="payment" value="creditcard"><label>บัตรเครดิต</label>
+    <div>
+    	<input type="radio" name="card" value="VISA"><label>VISA</label><br>
+		<input type="radio" name="card" value="MasterCard"><label>MasterCard</label><br>
+    </div>
+</form>
+</body>
+</html>

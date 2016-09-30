@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Mobile</title>
+<link rel="stylesheet" href="../jqm/jquery.mobile-1.3.1.min.css">
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jqm/jquery.mobile-1.3.1.min.js"> </script>
+</head>
+
+<body>
+<div data-role="page" data-theme="b">
+ 	<div data-role="header"><h1>jQuery Mobile</h1></div>
+
+    	<div data-role="content">
+	<form method="post" action="formecho-jqm.php">
+    	<input type="text" name="name" data-mini="true" placeholder="ชื่อ">
+   	 <textarea name="address" data-mini="true" 
+ 		placeholder="ที่อยู่"></textarea>
+
+       	 วิธีชำระเงิน:
+ 	<select name="payment" data-native-menu="false" data-mini="true">
+        	 	<option value="banktransfer">โอนผ่านธนาคาร</option>
+ 		<option value="credit">บัตรเครดิต</option>
+ 	</select>
+
+       	 กรณีชำระผ่านบัตรเครดิต:
+ 	<div data-role="controlgroup" data-type="vertical">
+          		<input type="radio" name="card" id="visa" value="VISA" 
+ 			data-mini="true"><label for="visa">VISA</label>
+        		<input type="radio" name="card" id="master" value="MasterCard"
+ 			data-mini="true"><label for="master">MasterCard</label>      
+       	</div>
+
+        	อื่นๆ:
+ 	<div data-role="controlgroup" data-type="vertical">
+        	 	<input type="checkbox" name="gift" id="gift" value="gift" 
+ 			data-mini="true"><label for="gift">ห่อของขวัญ</label>
+        	 	<input type="checkbox" name="fast" id="fast" value="fast" 
+ 			data-mini="true"><label for="fast">ส่งด่วน</label>
+ 	</div>
+        
+    	<button type="reset" data-mini="true" data-inline="true" 
+ 		data-theme="e">Reset</button>
+    	<button type="submit" data-mini="true" data-inline="true" 
+ 		data-theme="e">Submit</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

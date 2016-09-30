@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="uft-8">
+<title>First-Child Selector</title>
+<style>
+	table {
+		border-collapse: collapse;
+		width: 200px;
+	}
+	
+	td {
+		border: solid 1px gray;
+	}
+	
+	tr > td:first-child {
+	 	background: #cdf;
+		font-weight: bold;
+		text-align: right;
+		width: 50px;
+	}
+</style>
+</head>
+
+<body>
+<table>
+<tr><td>ชื่อ:</td><td>รัชดาภรณ์</td></tr>
+<tr><td>เพศ:</td><td>หญิง</td></tr>
+</table>
+</body>
+</html>

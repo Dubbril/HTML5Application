@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>replace()</title>
+<style>
+	p {
+		border: double 4px red;
+		background: skyblue;
+		font-size: 20px;
+	}
+	div {
+		border: dotted 4px blue;
+		background: gainsboro;
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	span {
+		border: solid 2px;
+		display: block;
+		margin-bottom: 20px;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('button:first').click(function() {
+		var t = '<p>' + $(this).text() + '</p>';
+		$('body > :first').replaceWith(t);
+	});
+	
+ 	$('button:last').click(function() {
+		var t = '<div>' + $(this).text() + '</div>';
+		$('body > :first').replaceWith(t);
+	});
+});
+</script>
+</head>
+
+<body>
+	<span>span</span>
+	<button>Replace with paragraph</button> <button>Replace with div</button>
+</body>
+</html>

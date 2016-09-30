@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI: Drag-Drop</title>
+<style>
+	img {
+		width: 150px;
+		border: solid 2px red;
+	}
+	#drag {
+		width: 40px;
+		height: 30px;
+		border: solid 1px salmon;
+		background: #cdf;
+		/*cursor: move; */
+		display: inline-block; float: left;
+		padding: 3px;
+		font-size: larger;
+	}
+	#drop {
+		width: 120px;
+		height: 50px;
+		border: solid 2px blue;
+		background: #cfe;
+		padding: 3px;
+		font-size: larger;
+		float: right;
+	}
+
+</style>
+<link href="../jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jquery-ui-1.10.3.custom.min.js"> </script>
+<script>
+var dropCount = 0;
+$(function() {
+	//$('#drag').draggable({axis: 'x'});
+	
+
+	$('.drag').draggable();
+		/*
+	$('#drop').droppable({
+		drop: function(event, ui) {
+			ui.draggable.fadeOut(500),
+			$(this).text('dropped: ' + (++dropCount)); 
+			//$(this).append(ui.draggable.text());
+		}
+	});
+	*/
+});
+</script>
+</head>
+
+<body>
+<div id="drop">Drop</div>
+<div id="drag" class="drag">Drag</div>
+<!--<div class="drag">Drag Me #2</div>
+<div class="drag">Drag Me #3</div>
+<div class="drag">Drag Me #4</div>
+<div class="drag">Drag Me #5</div>
+<div class="drag">Drag Me #6</div>
+<br><br><br><br><br>
+
+
+<img id="drag" src="jquery.jpg">-->
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pseudo element</title>
+<style>
+	p.intro::first-letter {
+		font: 50px tahoma;
+		color: crimson;
+		vertical-align:sub;
+	}
+	#dv::first-letter {
+		font: 50px tahoma;
+		color: crimson;
+		border: solid 1px gray;
+		background: lightskyblue;
+		padding: 0px 5px;
+	}
+	
+	p.content::first-line {
+		background:  lightskyblue;
+		color: crimson;
+		font-size: larger;
+	}
+</style>
+</head>
+
+<body>
+<p class="intro">
+ 	กลุ่มซีเล็กเตอร์แบบซูโดอิลิเมนต์(Pseudo Element) จะใช้สำหรับกำหนดลักษณะบางอย่างของอิลิเมนต์
+</p>
+<div id="dv">
+ 	ใน CSS3 กำหนดให้กลุ่มซีเล็กเตอร์แบบซูโดอิลิเมนต์มีเครื่องหมายโคลอน(:) นำหน้าจำนวน 2 อัน
+</div>
+
+<p class="content">
+กลุ่มซีเล็กเตอร์แบบซูโดอิลิเมนต์(Pseudo Element) <br>
+จะใช้สำหรับกำหนดลักษณะบางอย่างของอิลิเมนต์ที่ไม่สามารถนำซีเล็กเตอร์กลุ่มอื่นๆมาใช้ได้
+</p>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Layout</title>
+<style>
+	body {
+		min-width: 610px;
+	}
+	div {
+		font-size: large;
+		padding: 15px;
+		margin: 3px;
+	}
+	#header {
+		background: #f50;
+		width: 550px;
+		font-size: 24px;
+	}
+	#nav {
+		background: #cdf;
+		width: 550px;
+	}
+	#content {
+		background: #cdc;
+		width: 360px;
+	}
+	#content img {
+		float: left;
+		margin: 5px;
+		width: 80px;
+	}
+	#side {
+		background: #5ca;
+		width: 150px;
+	}
+	#footer {
+		background: #f90;
+		width: 550px;
+		position: relative;
+	}
+	#wrapper {
+		overflow: hidden;
+		padding: 0px;
+	} 
+	#content, #side {
+		float: left;
+		margin-bottom: -2000px;
+		padding-bottom: 2000px;		
+	}
+</style>
+</head>
+
+<body>
+<div id="header">
+	DeveloperThai
+</div>
+
+<div id="nav">
+ 	<a href="#">Home</a> |
+    <a href="#">Company Info</a> |
+    <a href="#">Products</a> |
+    <a href="#">Contact Us</a>
+</div>
+
+<div id="wrapper">
+<div id="content">
+    <img src="html5.gif">HTML5 will be the new standard for HTML.
+	The previous version of HTML, HTML 4.01, came in 1999. The web has changed a lot since then.
+	HTML5 is still a work in progress. However, the major browsers support many of the new HTML5 elements and APIs. 
+    <br>(from: www.w3schools.com)
+</div>
+
+<div id="side">
+    <b>Related Products:</b><br>
+    <a href="#">CSS3</a><br>
+    <a href="#">jQuery</a><br>
+    <a href="#">PHP</a><br>
+    <a href="#">MySQL</a><br>
+    <a href="#">Apache</a><br>
+    <a href="#">Dreamweaver</a>
+</div>
+</div>
+
+<div id="footer">
+	&copy; 2013 DeveloperThai.com All Rights Reserved
+</div>
+</body>
+</html>

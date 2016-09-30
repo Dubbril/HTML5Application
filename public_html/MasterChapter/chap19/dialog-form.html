@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI: Dialog</title>
+<link href="../jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+<style>
+	#login {
+		display: none;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jquery-ui-1.10.3.custom.min.js"> </script>
+<script>
+$(function() {
+	$('a').click(function() {	
+		$('#login').dialog({
+			title: 'เข้าสู่ระบบ',
+			modal: true,
+			buttons: [
+				{text: 'OK', click: function() { $('form').submit(); }}, 
+				{text: 'Cancel', click:  function() { $(this).dialog('close'); }}
+			]
+		});
+		
+	});
+});
+</script>
+</head>
+
+<body>
+<a href="#">เข้าสู่ระบบ</a>
+<div id="login">
+<form>
+	Login: <input type="text"><br>
+	Pswd: <input type="password"> 
+</form>
+</div>
+</body>
+</html>

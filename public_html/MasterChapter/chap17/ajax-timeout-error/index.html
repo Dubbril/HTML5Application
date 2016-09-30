@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX: timeout and error</title>
+<script src="../../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var data = $('#keyword').serialize();
+		$.ajax({
+			url: 'search.php',
+			data: data,
+			type: 'GET',
+			timeout: '3000',
+			error: onError
+		});
+	});
+});
+
+function onError() {
+	alert('Connection Timeout!');
+}
+</script>
+</head>
+
+<body>
+<form>
+ 	ค้นหา:<input type="text" id="keyword">
+ 	<button type="button">ตกลง</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX: load - data</title>
+<script src="../../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	//เริ่มแรก ให้ตัวเลือกบัตรเครดิตอยู่ในถานะ disabled
+	//เพราะเรากำหนดให้รายการ "โอนผ่านธนาคาร" ถูกเลือกไว้ล่วงหน้า
+	$('select').attr('disabled', ' ');
+	
+	//ถ้าเลือกวิธีการชำระเงินแบบ "โอนผ่านธนาคาร"
+	//ต้องทำให้ไม่สามารถเลือกรายการบัตรเครดิตได้
+	//เพื่อไม่ได้ตัวเลือกบัตรเครดิตถูกส่งอออกไปด้วย
+	$(':radio').change(function() {
+		if($('[value=โอนผ่านธนาคาร]').is(':checked')) {
+			$('select').attr('disabled', ' ');
+		}
+		else {
+			$('select').removeAttr('disabled');
+		}
+	});
+
+	$('button').click(function() {	
+		var data = $('form').serialize();  
+ 		//หรือ $('form').serializeArray();
+
+		$('#result').load('ajax-form-echo.php', data);
+	});	
+});
+</script>
+</head>
+
+<body>
+<form>
+	ชื่อ:<br> <input type="text" name="name"><br>
+	ที่อยู่:<br> <textarea name="address"></textarea><br>
+     วิธีชำระเงิน:<br>
+     <input type="radio" name="payment" value="โอนผ่านธนาคาร" checked>
+ 		โอนผ่านธนาคาร<br>
+     <input type="radio" name="payment" value="บัตรเครดิต">บัตรเครดิต
+    	<select name="card">
+    		<option>VISA</option>
+        	<option>MasterCard</option>
+     </select>
+     <button type="button">ส่งข้อมูล</button>
+</form>
+<hr>
+<div id="result"></div>
+</body>
+</html>

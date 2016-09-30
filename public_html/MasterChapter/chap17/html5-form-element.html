@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML5 Form Elements</title>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var email = $('[type=email]').val();
+		var num = $('[type=number]').val();
+	 	var color = $('[type=color]').val();
+
+		var msg = 'email: ' + email + '\n';
+		msg += 'num: ' + num + '\n';
+		msg += 'color: ' + color;
+		alert(msg);
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+	<input type="email">
+	<input type="number">
+	<input type="color">
+	<button type="button">Show Value</button>
+</form>
+
+</body>
+</html>

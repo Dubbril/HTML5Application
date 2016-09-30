@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>$.earch()</title>
+<script src="../jquery-2.0.0.min.js"> </script>
+</head>
+
+<body>
+<form>
+		<input type="checkbox" value="One">One
+    	<input type="checkbox" value="Two" checked>Two
+    	<input type="checkbox" value="Three">Three
+    	<input type="checkbox" value="Four" checked>Four
+</form>
+
+
+<script>
+var text = "";
+
+$(':checked').each(function() {
+	text += $(this).val() + '\n';
+});
+
+alert('รายการที่เลือกคือ:\n' + text);
+</script>
+
+</body>
+</html>

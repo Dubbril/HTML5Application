@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI: Drag-Drop</title>
+<style>
+	.drag {
+		cursor: move;
+		vertical-align: middle;
+		margin: 5px;
+	}
+	#product-container {
+		float: left;
+	}
+	#cart-container {
+		text-align: center;
+		float: right;
+	}
+	#cart-count {
+		font-size: 30px;
+	}
+</style>
+<link href="../jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jquery-ui-1.10.3.custom.min.js"> </script>
+<script>
+var cartCount = 0;
+var cartItems = [];	//ใช้เก็บรายการสินค้าในรถเข็น
+		
+$(function() {
+	$('.drag').draggable({helper: 'clone'});  //ใช้การโคลนนิ่งสินค้าที่ถูกคลิกเลือก
+		
+	$('#drop').droppable({
+		drop: function(event, ui) {
+			var p = ui.draggable.attr('src'); 	 //ตรวจสอบสินค้าที่ลากมา
+			if($.inArray(p, cartItems) == -1) {	//หากสินค้านั้นยังไม่มีรถเข็น
+				cartItems.push(p);				//เพิ่มรายการสินค้าในรถเข็น
+ 				cartCount++;
+				$('#cart-count').text('(' + cartCount + ')');
+			}
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+	<div id="cart-container">
+		<img id="drop" src="cart.png"><br>
+		<span id="cart-count">(0)</span>
+	</div>
+	<div id="product-container">
+		<img src="product1.jpg" class="drag">Product #1<br>
+		<img src="product2.jpg" class="drag">Product #2<br>
+		<img src="product3.jpg" class="drag">Product #3
+	</div>
+</body>
+</html>

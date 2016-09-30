@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css()</title>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('#font').click(function() {
+		$('div').css('font', 'bold 20px Tahoma');
+	});
+
+	$('#border').click(function() {
+		$('div').css('border', 'dotted 3px red');
+	});
+
+	$('#bg').click(function() {
+		$('div').css('backgroundColor', '#aaddff');
+	});
+});
+</script>
+</head>
+
+<body>
+ 	<div>Sample Text</div>
+ 	<button id="font">Font</button>
+ 	<button id="border">Border</button>
+ 	<button id="bg">Background</button>
+</body>
+</html>

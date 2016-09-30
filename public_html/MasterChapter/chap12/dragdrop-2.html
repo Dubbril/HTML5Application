@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Drag Drop</title>
+<style>
+	span.drag {
+		width: 50px;
+		height: 30px;
+		border: solid 2px salmon;		
+		margin: 5px;
+		padding: 2px;
+		float: left;
+	}
+	#drop {
+		width: 150px;
+		height: 80px;
+		border: solid 2px blue;
+		font-size: 30px;
+		padding: 5px;
+		float: right;
+	}
+</style>
+
+<script>
+window.onload  = function() {
+	var skyblue = document.getElementById('skyblue');
+	skyblue.ondragstart = function(event) {
+			event.dataTransfer.setData('color', this.innerHTML);
+	}
+
+	var tomato = document.getElementById('tomato');
+	tomato.ondragstart = function(event) {
+			event.dataTransfer.setData('color', this.innerHTML);
+	}
+	
+	var silver = document.getElementById('silver');
+	silver.ondragstart = function(event) {
+			event.dataTransfer.setData('color', this.innerHTML);
+	}
+		
+	var target= document.getElementById('drop');
+	
+	target.ondragover = function(event) {
+		event.preventDefault();
+	}
+	
+	target.ondrop = function(event) {
+		var color = event.dataTransfer.getData('color');
+		this.style.backgroundColor = color;
+		event.stopPropagation();
+	}
+}
+</script>
+</head>
+
+<body>
+	<div id="drop">Drop Here</div>
+	<span id="skyblue" class="drag" draggable="true">skyblue</span>
+	<span id="tomato" class="drag"  draggable="true">tomato</span>
+	<span id="silver" class="drag"  draggable="true">silver</span>
+</body>
+</html>

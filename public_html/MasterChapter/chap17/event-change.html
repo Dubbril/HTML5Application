@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>event: change</title>
+<style>
+	div {
+		font-size: 20px;
+		border: solid 1px brown;
+		background: #cdf;
+		padding: 3px;
+	}
+	label {
+		float: left;
+		margin: 5px;
+		padding: 3px;
+		border: solid 1px brown;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function(){
+	$(':text').change(function() {
+		$('div').html($(this).val());
+	});
+	
+	$(':checkbox').change(function() {	
+		if($(this).is(':checked')) {
+			if($(this).val() == 'bold') {
+				$('div').css('font-weight', 'bold');
+			}
+			else if($(this).val() == 'italic') {
+				$('div').css('font-style', 'italic');
+			}
+			else	if($(this).val() == 'underline') {
+				$('div').css('text-decoration', 'underline');
+			}
+		}
+		else {
+			if($(this).val() == 'bold') {
+				$('div').css('font-weight', 'normal');
+			}
+			else if($(this).val() == 'italic') {
+				$('div').css('font-style', 'normal');
+			}
+			else	if($(this).val() == 'underline') {
+				$('div').css('text-decoration', 'none');
+			}			
+		}
+	});
+	
+	$(':radio').change(function() {
+		var c = $(':radio:checked').val();
+		$('div').css('color', c);
+	});
+	
+	$('select').change(function() {
+		$('div').css('font-size', $('option:selected').val());
+	});
+	
+});
+</script>
+</head>
+
+<body>
+<div>Sample Text</div><br>
+<form>
+ 	<label>ใส่ข้อความ:<br><input type="text"></label>
+ 	<label>รูปแบบ:<br>
+ 		<input type="checkbox" value="bold">หนา<br>
+ 		<input type="checkbox" value="italic">เอียง<br>
+ 		<input type="checkbox" value="underline">ขีดเส้นใต้
+ 	</label>
+ 	<label>สี:<br>
+ 		<input type="radio" name="color" value="red">แดง<br>
+ 		<input type="radio" name="color" value="green">เขียว<br>
+ 		<input type="radio" name="color" value="blue">น้ำเงิน
+ 	</label>
+ 	<label>ขนาด:<br>
+ 		<select>
+			<option>20px</option>
+     		<option>30px</option>
+    			<option>40px</option>
+ 		</select>
+ 	</label>
+</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>geolocation</title>
+<script>
+window.onload = function() {
+	var geo = navigator.geolocation;
+	geo.getCurrentPosition(position, error, {timeout: 10000});
+}
+
+function position(pos) {
+	var lat = pos.coords.latitude;  		
+	var lon = pos.coords.longitude;		
+	
+	alert('Latitude: ' + lat + '\nLongtitude: ' + lon);
+}
+
+function error(err) {
+	var errMsg = [	
+  							'ไม่ทราบสาเหตุของข้อผิดพลาด',
+							'ไม่ได้รับอนุญาตให้เข้าใช้งาน Geolocation',
+							'ไม่สามารถค้นหาตำแหน่งได้',
+							'หมดเวลาในการค้นหาตำแหน่ง'];
+						
+	alert(errMsg[err.code]);
+}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

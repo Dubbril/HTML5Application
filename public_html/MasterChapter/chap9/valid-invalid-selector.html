@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>:valid & :invalid</title>
+<style>
+	:invalid {
+		background: #bdf;
+	}
+	:invalid + span {
+		color: red;
+	}
+	:valid {
+		background: #eef;
+	}
+</style>
+</head>
+
+<body>
+<form>
+	<input type="text" required><span>*</span><br>
+    <input type="text"><br>
+    <textarea required></textarea><span>*</span><br>
+    
+    <button>OK</button>
+</form>
+</body>
+</html>

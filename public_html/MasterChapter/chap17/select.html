@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>element select</title>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('#show').click(function() {
+		var text = "";
+		$('option:selected').each(function() {
+			text += $(this).val() + "\n";
+		});
+		alert(text);
+	});
+	
+	$('#multiple').change(function() {
+		if($(this).is(':checked')) {
+			$('select').attr({multiple:' ', size:10});
+		}
+		else {
+			$('select').removeAttr('multiple');
+			$('select').removeAttr('size');			
+		}
+	});
+	
+	$('#set').click(function() {
+		var index = parseInt($('#index').val());
+		if(index >= 0 && index < $('option').length) {
+			$('select').prop('selectedIndex', index);
+		}
+		else {
+			alert('Index out of range');
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+ 	<select>
+		<optgroup label="ดอกไม้">
+			<option value="Rose">กุหลาบ</option>
+    			<option value="Jasmine">มะลิ</option>
+    			<option>กล้วยไม้</option>
+   			<option>ทานตะวัน</option>
+     	</optgroup>
+     	<optgroup label="ผลไม้">
+     		<option value="Apple">แอปเปิ้ล</option>
+        		<option value="Orange">ส้ม</option>
+        		<option>องุ่น</option>
+    		</optgroup>
+ 	</select>
+
+ 	<input type="checkbox" id="multiple">Multiple Selection<br><br>
+ 
+ 	<button type="button" id="show">Show Selected</button><br>
+ 
+ 	<button type="button" id="set">Set Selected Index</button>:
+ 	<input type="text"  id="index" size="1">
+</form>
+</body>
+</html>

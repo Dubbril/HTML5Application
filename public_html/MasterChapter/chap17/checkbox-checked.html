@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>checkbox checked</title>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('#all').click(function() {
+		$(':checkbox').each(function() {
+			$(this).prop('checked', ' ');
+		});
+	});
+
+	$('#clear').click(function() {
+		$(':checkbox').each(function() {
+			$(this).removeAttr('checked');
+		});
+	});
+
+	$('#invert').click(function() {
+		$(':checkbox').each(function() {
+			if($(this).is(':checked')) {
+				$(this).removeAttr('checked');
+			}
+			else {
+				$(this).prop('checked', ' ');
+			}
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+ 	<input type="checkbox" name="html5" value="HTML5">HTML5<br>
+	<input type="checkbox" name="css3" value="CSS3">CSS3<br>
+	<input type="checkbox" name="jquery" value="jQuery">jQuery<br>
+	<br>
+	<button type="button" id="all">Select All</button><br>
+	<button type="button" id="clear">Clear All</button><br>
+	<button type="button" id="invert">Invert Selection</button>
+</form>
+</body>
+</html>

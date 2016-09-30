@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Layout</title>
+<style>
+	body {
+		min-width: 560px;
+	}
+	div {
+		font-size: larger;
+		padding: 10px;
+		margin: 3px;
+		border: solid 2px black;
+	}
+	#header {
+		background: coral;
+	}
+	#nav {
+		background: skyblue;
+	}
+	#content {
+		background: lightcyan;
+		width: 320px;
+		height: 120px;
+		float: left;
+	}
+	#aside {
+		background: hotpink;
+		width: 150px;
+		height: 120px;
+		float: left;
+	}
+	#footer {
+		background: gainsboro;
+	}
+	#header, #nav, #footer { width: 500px; }
+</style>
+</head>
+
+<body>
+	<div id="header">&lt;header&gt;</div>
+	<div id="nav">&lt;nav&gt;</div>
+	<div id="content">&lt;content&gt;</div>
+	<div id="aside">&lt;aside&gt;</div>
+	<br style="clear: left;">
+	<div id="footer">&lt;footer&gt;</div>
+</body>
+</html>

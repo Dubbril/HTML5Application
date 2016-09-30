@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Effect: slideToggle()</title>
+<style>
+	div {
+		border: solid 2px red;
+		background: #cdf;
+		font-size: 50px;
+		text-align: center;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var d = $(':selected').val();
+		d = parseInt(d);
+		
+		$('div').slideToggle(d, function() {
+		 	if($('button').text() == "slide up") {
+			 	$('button').text("slide down");
+		 	}
+			else {
+				$('button').text("slide up");
+			}			
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+ 	<div>jQuery</div><br>
+
+ 	duration: <select>
+            		<option>1000</option>
+            		<option>2000</option>
+           		 	<option>3000</option>
+       			</select>
+                <button type="button">slide up</button>
+</body>
+</html>

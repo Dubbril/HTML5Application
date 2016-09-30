@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>attr</title>
+<style>
+	textarea { resize: none; }
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('button').click(function(event) {
+		var r = $('textarea').attr('rows');	//นับจำนวนแถว
+		//ถ้าคลิกปุ่ม add ให้เพิ่มจำนวนแถวจากเดิมไปอีก 1
+		if($(this).attr('id') == 'add') {
+			$('textarea').attr('rows', ++r);
+		}
+		//ถ้าคลิกปุ่ม remove และมีจำนวนแถวมากกว่า 1 ให้ลดจำนวนแถวจากเดิมลงอีก 1
+		else if($(this).attr('id') == 'remove' && r > 1) {
+			$('textarea').attr('rows', --r);
+		}
+	});
+
+	//แต่ละครั้งที่พิมพ์ข้อมูลลงใน textarea ให้นับว่ามีข้อมูลหรือไม่ 
+ 	//ถ้าไม่มีให้ปุ่มอยู่ในสถานะ disabled  แต่ถ้ามี ให้ลบแอตทริบิวต์ disabled ออก
+	$('textarea').keyup(function() {
+		if($(this).val().length == 0)	 {
+			$('#update').attr('disabled', ' ');
+		}
+		else {
+			$('#update').removeAttr('disabled');
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+	Status:<br>
+	<textarea cols="32" rows="2"></textarea><br>
+    <button id="add">Add Row</button>
+    <button id="remove">Remove Row</button>
+    <button id="update" disabled>Update Status</button>
+</body>
+</html>

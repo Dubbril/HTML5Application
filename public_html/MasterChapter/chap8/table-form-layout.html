@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>form layout with table</title>
+<style>
+	/*
+	table {
+		border-collapse: collapse;
+	}
+	td {
+		border: dashed 2px brown;
+	}
+	*/
+</style>
+</head>
+
+<body>
+<form method="post" action="formecho.php">
+<table>
+<tr>
+	<td>ชื่อ:</td><td><input type="text" name="name" size="30"></td>
+</tr>
+<tr>
+	<td>ที่อยู่:</td><td><textarea name="address" cols="35" rows="2"></textarea></td>
+</tr>
+<tr>
+	<td>โทร:</td><td><input type="tel" name="email" size="30"></td>
+</tr>
+<tr>
+	<td>อีเมล:</td><td><input type="email" name="email" size="30"></td>
+</tr>
+<tr>
+	<td>วิธีชำระเงิน:</td>
+    <td>
+    	<select name="payment">
+        	<option value="bank-transfer">โอนผ่านธนาคาร</option>
+            <option value="money-order">ธนาณัติ</option>
+         </select>
+    </td>
+</tr>
+<tr>
+	<td>วิธีจัดส่ง:</td>
+    <td>
+    	<input type="radio" name="sending" value="ems">EMS
+        <input type="radio" name="sending" value="reg">ลงทะเบียน
+    </td>
+<tr>
+	<td></td>
+	<td>
+    	<br>
+    	<button type="submit">ตกลง</button>
+    	<button type="button" onclick="history.back()">ยกเลิก</button>
+    </td>
+</tr>
+</table>
+</form>
+</body>
+</html>

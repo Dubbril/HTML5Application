@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>draw arc</title>
+<style>
+	canvas { border: dotted 2px  silver;  }
+</style>
+<script>
+window.onload = function() {
+	var cv = document.getElementById('cv');
+	var ctx = cv.getContext('2d');
+	
+ 	ctx.lineWidth = 5;
+	ctx.strokeStyle = 'tomato';
+	
+	ctx.beginPath();
+  	ctx.arc(75, 75, 50, 0, 2*Math.PI, true); 	//head
+	ctx.stroke();
+	
+	ctx.beginPath();		 
+	ctx.arc(60, 65, 5, 0, 2*Math.PI, true);  //left eye
+	ctx.stroke();
+		 
+	ctx.beginPath();	
+	ctx.arc(90, 65, 5, 0, 2*Math.PI, true);  //right eye
+	ctx.stroke();	
+	
+	ctx.beginPath();
+	ctx.arc(75, 75, 35, 0, Math.PI);  	//mouth (clockwise)
+	ctx.stroke();
+}
+</script>
+</head>
+
+<body>
+	<canvas id="cv" width="150" height="150"> </canvas>
+</body>
+</html>

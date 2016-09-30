@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Effect: animate()</title>
+<style>
+	#animate {
+		border: solid 2px red;
+		background: #cdf;
+		width: 50px;
+		height: 50px;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var w = $('#width').val() + 'px';
+		var h = $('#height').val() + 'px';
+		
+		$('#animate').animate(
+			{width: w, height: h},
+			1000
+		);
+	});
+});
+</script>
+</head>
+
+<body>
+	<div id="animate"></div>
+	width:<select id="width">
+				<option>+=0</option>
+				<option>+=50</option>
+            	<option>-=50</option>
+         	</select>
+	height:<select id="height">
+				<option>+=0</option>
+				<option>+=50</option>
+            	<option>-=50</option>
+         	</select>
+            <button type="button">Animate</button>
+</body>
+</html>

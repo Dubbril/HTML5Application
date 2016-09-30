@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>event.which</title>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('img').mousedown(function(event) {
+		var n = event.which;
+		if(n == 1) {  		//ปุ่มซ้าย
+			location.href = 'http://jquery.com';
+		}
+		else if(n == 3) {		//ปุ่มขวา
+			alert('ห้ามบันทึกภาพนี้');
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+ 	<img src="jquery.jpg">
+</body>
+</html>

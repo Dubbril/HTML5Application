@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>unbind()</title>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('#bt').bind('click', function() {
+		alert('อัปเดตสถานะแล้ว');
+		$(this).unbind('click');
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+ 	อัปเดตสถานะ: <br>
+    	<textarea name="status" cols="30" rows="2"></textarea><br>
+	<button type="button" id="bt">ตกลง</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>local storage</title>
+<style>
+	p {
+		float: left;
+		margin: 5px;
+	}
+</style>
+<script>
+var login;
+var pswd;
+
+window.onload = function() {
+	login = document.getElementById('login');
+	pswd = document.getElementById('pswd');
+	
+	//เมื่อเปิดเพจ ให้เรียกใช้ฟังก์ชั่นการอ่านข้อมูล
+	getData();
+	
+	//เมื่อคลิกปุ่ม ให้เรียกใช้ฟังก์ชั่นการจัดเก็บข้อมูล
+	var button = document.getElementById('button');
+	button.onclick = setData;
+}
+
+//ฟังก์ชั่นสำหรับเก็บข้อมูลลงใน localStorage
+function setData() {
+	//ถ้าเช็คเลือกจัดเก็บข้อมูล ให้อ่านข้อมูลจากช่องอินพุทมาเก็บลงใน localStorage
+	if(document.getElementById('save').checked) {
+		localStorage.setItem('login', login.value);	
+		localStorage.setItem('pswd', pswd.value);
+		alert('บันทึกข้อมูลแล้ว กรุณาปิดเบราเซอร์นี้ แล้วเปิดใหม่เพื่อทดสอบ');
+	}
+	//ถ้าไม่เช็คเลือก ให้ลบข้อมูลออกจาก localStorage เผื่อว่าจะเคยเก็บข้อมูลนั้นไว้ก่อนแล้ว
+	else {
+		localStorage.removeItem('login');
+		localStorage.removeItem('pswd');
+		alert('ไม่มีการบันทึกข้อมูลในเครื่องนี้ กรุณาปิดเบราเซอร์นี้ แล้วเปิดใหม่เพื่อทดสอบ');
+	}
+}
+
+//ฟังก์ชั่นสำหรับอ่านข้อมูล localStorage เพื่อเติมลงในช่องอินพุท
+function getData() {
+ 	login.value =  localStorage.getItem('login');
+ 	pswd.value = localStorage.getItem('pswd');
+}
+</script>
+</head>
+
+<body>
+<form>
+	<p>Login: <br><input type="text" id="login" size="15"></p>
+    <p>Password: <br><input type="password" id="pswd" size="15"></p>
+     <br style="clear: left;">
+    <p>
+    <input type="checkbox" id="save">เก็บข้อมูลไว้ในเครื่องนี้
+    &nbsp;&nbsp;<button type="button" id="button">เข้าสู่ระบบ</button>
+    </p>
+</form>
+</body>
+</html>

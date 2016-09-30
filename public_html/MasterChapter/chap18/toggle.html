@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Effect: toggle()</title>
+<style>
+	img {
+		border: solid 2px red;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var d = $(':selected').val();
+		d = parseInt(d);
+		
+		$('img').toggle(d, function() {
+			if($('button').text() == "hide") {
+				$('button').text('show');
+			}
+			else {
+				$('button').text('hide');
+			}
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+	<img src="jquery.jpg"><br>
+	duration: <select>
+					<option>200</option>
+            		<option>400</option>
+            		<option>600</option>
+            		<option>1000</option>
+            		<option>2000</option>
+            		<option>3000</option>
+       			</select>
+				<button type="button">hide</button>
+</body>
+</html>

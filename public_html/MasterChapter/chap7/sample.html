@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Table</title>
+<style>
+	table {
+		text-align: center;
+		float: left;
+		margin: 20px;
+	}
+	td {
+		width: 30px; 
+	 	height: 20px; 
+	}
+	#t1 {
+		border: solid 3px #09f;
+	}
+
+	#t1 td {	
+		border: dotted 1px gray;
+	}
+	
+	#t2 {
+		border: none;
+	}
+	#t2 td {
+		border: solid 2px #09f;
+	}
+	
+	#t3 {
+		border: solid 0px gray;
+		border-collapse: collapse;
+	}
+	#t3 td {
+		border: solid 0px #ccc;
+	}
+	#t3 tr {
+		border: solid 2px #09f;
+	}
+	caption { font-size: 14px; }
+</style>
+</head>
+
+<body>
+<table id="t1">
+<caption>เส้นขอบตาราง</caption>
+<tr>
+	<td>1</td>	<td>2</td> <td>3</td> 
+</tr>
+<tr>
+	<td>4</td>	<td>5</td> <td>6</td> 
+</tr>
+<tr>
+	<td>7</td>	<td>8</td> <td>9</td>
+</tr>
+</table>
+
+<table id="t2">
+<caption>เส้นขอบเซลล์</caption>
+<tr>
+	<td>1</td>	<td>2</td> <td>3</td> 
+</tr>
+<tr>
+	<td>4</td>	<td>5</td> <td>6</td> 
+</tr>
+<tr>
+	<td>7</td>	<td>8</td> <td>9</td>
+</tr>
+</table>
+
+<table id="t3">
+<caption>เส้นขอบแถว</caption>
+<tr>
+	<td>1</td>	<td>2</td> <td>3</td> 
+</tr>
+<tr>
+	<td>4</td>	<td>5</td> <td>6</td> 
+</tr>
+<tr>
+	<td>7</td>	<td>8</td> <td>9</td>
+</tr>
+</table>
+
+</body>
+</html>

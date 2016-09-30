@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>attribute selector</title>
+<style>
+	a[href] { 
+		padding-left: 20px;  
+	 	display: block;
+	}
+	a[href*="developerthai.com"] { background: url(web.gif) no-repeat;  }
+	a[href$=".pdf"] { background: url(pdf.gif) no-repeat; }
+	a[href$=".docx"] { background: url(word.gif) no-repeat;  }
+	a[href^="mailto:"] { background: url(email.gif) no-repeat; }
+</style>
+</head>
+
+<body>
+ 	ท่านสามารถดาวน์โหลดเอกสารได้ที่:<br>
+ 	<a href="http://www.developerthai.com">developerthai.com</a>
+ 	<br>โดยรูปแบบให้เลือกดังนี้คือ<br>
+ 	<a href="http://www.developerthai.com/document.pdf">เอกสาร PDF</a>
+ 	<a href="http://www.developerthai.com/document.docx">เอกสาร Word</a>
+ 	<br>หากมีปัญหาใดๆกรุณาติดต่อทางอีเมล:<br>
+ 	<a href="mailto:banchar_pa@yahoo.com">banchar_pa@yahoo.com</a>
+</body>
+</html>

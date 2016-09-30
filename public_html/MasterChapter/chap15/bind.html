@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>bind()</title>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('#keyword').bind('blur', function() {
+		if($(this).val() == "") {
+			alert("Please enter keyword");
+		}
+	});
+	
+	$('#bt').bind('click', function() {
+		alert('No Data');
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+ 	ค้นหา: <input type="text" id="keyword">
+ 	<button type="button" id="bt">ตกลง</button>
+</form>
+</body>
+</html>

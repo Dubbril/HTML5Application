@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI: Dialog</title>
+<link href="../jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+<style>
+	img {
+		width: 50px;
+		cursor: pointer;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jquery-ui-1.10.3.custom.min.js"> </script>
+<script>
+$(function() {
+	$('img').click(function(event) {
+		$('#thumbnail').html('<img src="' + event.target.src + '" style="width:auto;height:auto;">');
+		$('#thumbnail').dialog({
+			modal: true, 
+			title: event.target.src
+		});	
+	});
+});
+</script>
+</head>
+
+<body>
+	<img src="jquery.jpg">
+	<img src="product1.jpg">
+	<img src="product2.jpg">
+	<img src="product3.jpg">
+	<div id="thumbnail"> </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hide() - show()</title>
+<style>
+	body { 
+		font-size: 50px; 
+		text-align: center; 
+	}
+	#top {
+		position: fixed;
+		right: 0px;
+		bottom: 0px;
+		z-index: 3000;
+		display: none;
+		cursor: pointer;
+		opacity: 0.5;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$(window).scroll(function(event) {
+		//ถ้าเกิดการเลื่อนตำแหน่งจากด้านบน ให้แสดงภาพ
+		if($(this).scrollTop() > 0) {
+			$('#top').show();
+		}
+		//ถ้าสกรอลล์บาร์อยู่ที่ด้านบนสุดของเพจอยู่แล้ว ให้ซ่อนภาพ
+		else  {
+			$('#top').hide();
+		}
+	});
+	
+	//ถ้าคลิกที่รูปภาพ ก็สั่งให้เลื่อนกรอลล์บาร์ไปอยู่ข้างบนสุด
+	$('#top').click(function() {
+		$(window).scrollTop(0);
+	});
+	
+	$('#top').hover(
+		function() {	$(this).css('opacity', 1);	},
+		function() { $(this).css('opacity', 0.5); }
+	);
+});
+</script>
+</head>
+
+<body>
+1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10
+<img id="top" src="top.gif">
+</body>
+</html>

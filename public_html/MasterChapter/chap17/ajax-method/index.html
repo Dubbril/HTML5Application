@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX: $ajax()</title>
+<script src="../../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var data = $('form').serialize();
+		$.ajax({
+			url: 'login.php',
+			data: data,
+			type: 'POST',
+			success: callback
+		});
+	});
+});
+
+function callback(result) {
+	//ถ้าผลลัพธ์ที่ส่งกลับมาเป็นคำว่า "success" ให้แสดงข้อความว่าเข้าสู่ระบบ
+	//และลิงก์สำหรับออกจากระบบ จากนั้นให้ซ่อนฟอร์ม
+	if(result == "success") {
+		$('div').html(
+			'<b>ท่านเข้าสู่ระบบแล้ว</b><br>' + 
+			'<a href="javascript: location.reload()">ออกจากระบบ</a>'
+		);
+		
+		$('form').css('display', 'none');
+	}
+
+	//ถ้าข้อความที่ส่งกลับมาเป็นคำว่า "error" ให้แสดงข้อความว่าเกิดข้อผิดพลาด
+	else if(result == "error") {
+		$('div').html('ท่านใส่ล็อกอินหรือรหัสผ่านไม่ถูกต้อง');
+	}
+}
+</script>
+</head>
+
+<body>
+<form>
+	Login:<input type="text" id="login" name="login"><br>
+    	Pswd:<input type="password" name="pswd"><br>
+    	<button type="button">เข้าสู่ระบบ</button>
+</form>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Column Group</title>
+<style>
+ 	table {
+		border: solid 1px gray;
+		border-collapse: collapse;
+	}
+	th, td {
+		border: solid 1px gray;
+		height: 30px;
+		text-align: center;
+		font-weight: bold;
+	}
+	#sun {
+		background: #f99; 		
+		width: 60px;
+	}
+	#sat {
+		background: #ccf; 
+		width: 50px; 		
+	}
+	#norm {
+		width: 70px;
+	}
+</style>
+</head>
+
+<body>
+
+<table>
+<colgroup>
+ 	<col id="sun" span="1">
+ 	<col id="norm" span="5">
+ 	<col id="sat" span="1">
+</colgroup>
+<tr>
+	<th>อาทิตย์</th> <th>จันทร์</th> <th>อังคาร</th> <th>พุธ</th> <th>พฤหัสบดี</th> <th>ศุกร์</th> <th>เสาร์</th>
+</tr>
+<tr>
+	<td>1</td> <td>2</td> <td>3</td> <td>4</td> <td>5</td> <td>6</td> <td>7</td>
+</tr>
+<tr>
+	<td>8</td> <td>9</td> <td>10</td> <td>11</td> <td>12</td> <td>13</td> <td>14</td>
+</tr>
+</table>
+</body>
+</html>

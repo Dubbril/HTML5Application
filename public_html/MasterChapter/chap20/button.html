@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Mobile</title>
+<link rel="stylesheet" href="../jqm/jquery.mobile-1.3.1.min.css">
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jqm/jquery.mobile-1.3.1.min.js"> </script>
+<script>
+$(document).bind('pageinit', function() {
+	$('button').bind('click', function() {
+		alert('I Love Pui...');
+	});
+});
+</script>
+</head>
+
+<body>
+<div data-role="page" data-theme="b">
+	<div data-role="header">
+    	<h1>jQuery Mobile</h1>
+    </div>
+    <div data-role="content">
+    	<!--
+        <button>ไม่ระบุ data-inline</button>
+        <button data-inline="false">data-inline = false</button>
+           <button data-inline="true" data-mini="true">OK</button>
+        <button data-inline="true" data-mini="true">Cancel</button>    
+        <button data-inline="true" data-icon="arrow-l" data-mini="true">arrow-l</button>
+		<button data-inline="true" data-icon="arrow-r" data-mini="true">arrow-r</button>
+		<button data-inline="true" data-icon="arrow-u" data-mini="true">arrow-u</button>
+        <button data-inline="true" data-icon="arrow-d" data-mini="true">arrow-d</button><br>
+        <button data-inline="true" data-icon="delete" data-mini="true">delete</button>
+        <button data-inline="true" data-icon="plus" data-mini="true">plus</button>
+        <button data-inline="true" data-icon="minus" data-mini="true">minus</button>
+        <button data-inline="true" data-icon="check" data-mini="true">check</button>
+        <button data-inline="true" data-icon="gear" data-mini="true">gear</button><br>
+        <button data-inline="true" data-icon="refresh" data-mini="true">refresh</button>
+        <button data-inline="true" data-icon="forward" data-mini="true">forward</button>
+        <button data-inline="true" data-icon="back" data-mini="true">back</button>
+         <button data-inline="true" data-icon="home" data-mini="true">home</button>
+        <button data-inline="true" data-icon="search" data-mini="true">search</button><br>
+        <button data-inline="true" data-icon="star" data-mini="true">star</button>
+        <button data-inline="true" data-icon="alert" data-mini="true">alert</button>
+        <button data-inline="true" data-icon="info" data-mini="true">info</button>
+        <button data-inline="true" data-icon="grid" data-mini="true">grid</button> -->
+        <button data-inline="true" data-icon="star" data-iconpos="left" data-mini="true">left</button>
+        <button data-inline="true" data-icon="star" data-iconpos="right" data-mini="true">right</button>
+        <button data-inline="true" data-icon="star" data-iconpos="top" data-mini="true">top</button>
+        <button data-inline="true" data-icon="star" data-iconpos="bottom" data-mini="true">bottom</button>
+        <button data-inline="true" data-icon="star" data-iconpos="notext" data-mini="true">notext</button>
+    </div>
+    
+</div>
+</body>
+</html>

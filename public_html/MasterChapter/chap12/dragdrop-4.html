@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Drag Drop</title>
+<style>
+	#bgColor, #fontSize {
+		float: left;
+	}
+	span.drag {
+		width: 50px;
+		height: 30px;
+		border: solid 2px salmon;		
+		padding: 2px;
+		margin: 5px;
+		float: left;
+	}
+	#drop {
+		width: 150px;
+		height: 80px;
+		border: solid 2px blue;
+		float: right;
+		padding: 5px;
+	}
+</style>
+
+<script>
+window.onload  = function() {
+	addListener('bgColor', 'color');
+	addListener('fontSize', 'size');
+	
+	var target = document.getElementById('drop');
+	
+	target.ondragover = function(event) {
+		event.preventDefault();
+	}
+	
+	target.ondrop = function(event) {
+		if(event.dataTransfer.getData('color')) {
+			this.style.backgroundColor = event.dataTransfer.getData('color');
+		}
+		else if(event.dataTransfer.getData('size')) {
+			this.style.fontSize = event.dataTransfer.getData('size'); 
+		}
+		event.stopPropagation();
+	}
+}
+
+function addListener(parent, key) {
+	var container = document.getElementById(parent);
+	var numDrag = container.children.length;
+	for(i = 0; i < numDrag; i++) {
+		var elem = container.children[i];
+		elem.ondragstart = function(event) {
+ 			event.dataTransfer.setData(key, this.innerHTML); 
+		}
+	}	
+}
+</script>
+</head>
+
+<body>
+	<div id="drop">Drop Here</div>
+	<div id="bgColor">
+		<span class="drag" draggable="true">skyblue</span>
+		<span class="drag"  draggable="true">tomato</span>
+		<span class="drag"  draggable="true">silver</span>
+     </div>
+     <br style="clear: left;">
+     <div id="fontSize">
+		<span class="drag" draggable="true">20px</span>
+		<span class="drag"  draggable="true">25px</span>
+		<span class="drag"  draggable="true">30px</span>
+	</div>
+</body>
+</html>

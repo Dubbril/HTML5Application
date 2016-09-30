@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Page Layout</title>
+<style>
+	body {
+		margin: 0px;
+		padding: 0px;
+		font: 14px tahoma;
+	}
+	#container {
+		width: 960px;
+		margin: auto; 
+	}
+	header {
+		/*background: #coral;*/
+		background: url(header-bg.png) no-repeat; 
+	}
+	header > section:first-child {
+		float: right;
+		padding-right: 10px;
+	}
+	header > section:first-child > div {
+		padding: 3px 0px;
+		font-size: 18px;
+		color: white;
+	}
+	header > section:last-child > div {
+		padding: 5px 10px;
+		font-size: 30px;
+		color: aqua;		
+	}
+	#logo {
+		margin-left: 60px;
+	}
+	
+	nav {
+		background: skyblue;
+		padding: 8px 0px;
+	}
+	nav > section:first-child {
+		float: right;
+		padding-right: 5px;
+	}
+	nav > section:last-child {
+		margin: 4px 0px;
+	}
+	nav a {
+		padding: 5px 5px;
+		text-decoration: none;
+		font-size: 16px;
+	}
+	nav a:link, nav a:visited {
+		color: blue;
+	}
+	nav a:hover {
+		color: red;
+		background: aqua;
+	}
+	
+	article {
+		/* background: lightcyan; */
+		width: 760px;
+		padding: 10px 0px;
+	}
+	article > section {
+		margin: 0px 20px 40px 5px;
+	}
+	article > section > img {
+		float: left;
+		width: 60px;
+		margin: 5px 10px;
+	}
+	article > section > h4 {
+		border-bottom: dotted 2px silver;
+		color: red;
+		margin: 5px;
+	}
+	
+	aside {
+		float: right;
+		width: 200px;
+		/*background: hotpink;*/
+		padding-bottom: 10px;
+	}
+	aside > section {
+		border: solid 1px gray;
+		border-radius: 7px;
+		background: lightcyan;
+		width: 90%;
+		margin: 10px auto;
+	}
+	aside > section > div {
+		border-radius: 5px 5px 0px 0px;	
+		background: tomato;
+		padding: 5px;
+		color: white;
+		font-weight: bold;
+	}
+	aside a:link, aside a:visited {
+		color: blue;
+	}
+	aside a:hover {
+		color: red;
+	}
+	
+	footer {
+ 		background: gainsboro;
+		clear: right;  
+	}
+</style>
+</head>
+
+<body>
+<div id="container">
+<header>
+    <section>
+    <div>ติดตามเราได้ที่:</div>
+    <a href="#"><img src="facebook.png"></a>
+    <a href="#"><img src="twitter.png"></a>
+    <a href="#"><img src="googleplus.png"></a>
+    <br><br>
+    <div>Hot line: 0-23456789</div>
+    </section>
+    <section>
+    <img id="logo" src="chromelogo.png">
+    <div>DeveloperThai</div>
+    </section>
+</header>
+<nav>
+    <section>
+	<form method="get" action="http://www.google.com/search">
+    <label>ค้นหา:</label><input type="text" name="q"><button type="submit">ตกลง</button>
+    </form>
+    </section>
+	<section>
+	<a href="#">หน้าแรก</a> |
+    <a href="#">ข้อมูลบริษัท</a> |
+    <a href="#">สินค้า</a> |
+    <a href="#">ติดต่อเรา</a>
+    </section>
+</nav>
+<aside>
+ 	<section>
+ 		<div>Related Products:</div>
+ 			<ul>
+            	<li><a href="#">JavaScript</a></li>
+     			<li><a href="#">jQuery</a></li>
+    			<li><a href="#">PHP</a></li>
+    			<li><a href="#">MySQL</a></li>
+    			<li><a href="#">Dreamweaver</a></li>
+			</ul>
+	</section>
+	<section>
+		<div>What's New:</div>
+ 			<ul>
+     			<li><a href="#">Link 1</a></li>
+   				<li><a href="#">Link 2</a></li>
+    			<li><a href="#">Link 3</a></li>
+   				<li><a href="#">Link 4</a></li>
+    			<li><a href="#">Link 5</a></li>
+			</ul>
+	</section>
+</aside>
+
+<article>
+	<section>
+    <h4>&raquo; HTML5</h4>
+    <img src="html5.gif">
+ 	HTML5 will be the new standard for HTML.
+	The previous version of HTML, HTML 4.01, came in 1999. The web has changed a lot since then.
+	HTML5 is still a work in progress. However, the major browsers support many of the new HTML5 elements and APIs...
+    <br>(from: w3schools.com)    
+    </section>
+    <section>
+    <h4>&raquo; CSS3</h4>
+    <img src="css3.gif">
+    Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation semantics (the look and formatting) 
+    of a document written in a markup language. Its most common application is to style web pages written in HTML and XHTML...
+    <br>(from: wikipedia.com) 
+    </section>
+</article>
+<footer>Footer</footer>
+</div>
+</body>
+</html>

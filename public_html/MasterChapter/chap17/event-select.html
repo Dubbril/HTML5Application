@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Event: Select</title>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+//����੾�СѺ Chrome ��� Safari
+$(function() {
+	$(':text, textarea').select(function() {
+		var text = window.getSelection() || document.getSelection() || document.selection.createRange().text;
+		alert(text);
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+	<input type="text" value="Sample Text">
+    <textarea>Please Select Text</textarea>
+</form>
+</body>
+</html>

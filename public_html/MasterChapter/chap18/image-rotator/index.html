@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Effects: Image Rotator</title>
+<style>
+	#container > img {
+		position: absolute;
+		display: none;
+	}
+</style>
+<script src="../../jquery-2.0.0.min.js"></script>
+<script>
+var n = 0;		//n เก็บจำนวนภาพ
+var  x = 0;		//x เก็บลำดับที่แสดงในขณะนั้น
+
+$(function() {
+	n = $('#container > img').length;
+	setInterval(imageRotator, 5000);		//ให้เปลี่ยนภาพทุก 5 วินาที
+});
+
+function imageRotator() {
+	//ซ่อนภาพที่แสดงก่อนนี้
+	$('#container > img:eq(' + (x - 1)  + ')').hide(2000);
+	
+	//แสดงภาพถัดไป
+	if(x == n) {	//ถ้าครบจำนวนภาพ ให้กลับไปเริ่มที่ภาพแรก
+		x = 0;
+	}
+	$('#container > img:eq(' + x  + ')').fadeIn(2000);
+	
+	x++;
+}
+</script>
+</head>
+
+<body>
+	<div id="container">
+		<img src="banner1.jpg">
+    	<img src="banner2.jpg">
+    	<img src="banner3.jpg">
+	</div>
+</body>
+</html>

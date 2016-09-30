@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX: load()</title>
+<script src="../../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	//วันเวลาที่โหลดเพจ
+	var dt = new Date();
+	var d = dt.getDate() + "-" + (dt.getMonth() + 1) + "-" + 
+ 			dt.getFullYear() + " ";
+
+	d += dt.getHours() + ":" + dt.getMinutes() + ":" + 
+ 		dt.getSeconds();
+
+	$('#local-time').html(d);
+	
+	//อ่านวันเวลาด้านเซิร์ฟเวอร์ ด้วยเทคนิค AJAX
+	$('button').click(function() {
+		$('#server-time').load('datetime.php');
+	});
+});
+</script>
+</head>
+
+<body>
+ 	วันเวลาที่โหลดเพจ: <span id="local-time"></span><br>
+ 	วันเวลาที่เซิร์ฟเวอร์: <span id="server-time"></span><br>
+ 	<button type="button">อ่านวันเวลาจากเซิร์ฟเวอร์</button>
+</body>
+</html>

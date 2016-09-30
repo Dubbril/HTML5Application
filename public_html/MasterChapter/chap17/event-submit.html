@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>event: submit</title>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	$('form').submit(function(event) {
+		/*
+		if(!confirm('ท่านยืนการสั่งซื้อสินค้านี้?')) {
+			event.preventDefault();
+		}
+		*/
+		if($(':text').val() == '' || $(':password').val() == '') {
+			event.preventDefault();
+			alert('กรุณาใส่ข้อมูลให้ครบ');
+		}
+		
+		//$(':submit').attr('disabled', ' ');
+	});
+});
+</script>
+</head>
+
+<body>
+<form action="test.php">
+	Login:<input type="text"><br>
+    Pswd:<input type="password">
+    <br><br>
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>

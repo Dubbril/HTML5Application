@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Effect: fadeIn() - fadeOut()</title>
+<style>
+	img {
+		border: solid 2px red;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+$(function() {
+	for(i = 10; i >= 0; i--) {
+			$('#opacity').append('<option>' + (i/10) + '</option>');
+	}
+	
+	$('button').click(function() {
+		var d = $('#duration > :selected').val();
+		d = parseInt(d);
+		
+		var o = $('#opacity > :selected').val();
+		o = parseFloat(o);
+		
+		$('img').fadeTo(d, o);
+	});
+});
+</script>
+</head>
+
+<body>
+ 	<img src="jquery.jpg"><br>
+ 	duration: <select id="duration">
+            		<option>1000</option>
+            		<option>3000</option>
+            		<option>5000</option>
+            		<option>7000</option>
+       			</select>
+				opacity: <select id="opacity"> </select>
+				<button type="button">fade to</button>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css()</title>
+<style>
+	label {	
+		float: left;
+		margin-right: 20px;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var props = {
+			'color': $('#color').val(),
+			'background-color': $('#bg').val(),
+			'font-size': $('#font-size').val()
+		}
+		
+		$('#dv').css(props);
+	});
+});
+</script>
+</head>
+
+<body>
+ 	<div id="dv">Sample Text</div><br>
+
+ 	<label>Color:<br>
+ 		<select id="color">
+ 			<option>white</option>
+    		<option>aqua</option>
+		</select>
+	</label>
+ 
+ 	<label>BgColor:<br>
+ 		<select id="bg">
+			<option>blue</option>
+    		<option>black</option>
+		</select>
+	</label>
+
+	<label>Font Size:<br>
+		<select id="font-size">
+ 			<option>20px</option>
+    		<option>30px</option>
+		</select>
+	</label><br>
+    
+	<button type="button">Set Properties</button>
+</body>
+</html>

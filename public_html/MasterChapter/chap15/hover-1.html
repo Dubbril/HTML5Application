@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hover()</title>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('button').hover(
+		function() {
+			$(this).text("mouse enter");
+		},
+		function() {
+			$(this).text("mouse leave");
+		}
+	);	
+});
+</script>
+</head>
+
+<body>
+ 	<button>move mouse here</button>
+</body>
+</html>

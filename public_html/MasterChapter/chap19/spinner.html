@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI: Spinner</title>
+<style>
+ 	div {
+		border: solid 2px red;
+		padding: 5px;
+		font-size: 20px;
+	}
+</style>
+<link href="../jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jquery-ui-1.10.3.custom.min.js"> </script>
+<script>
+$(function() {
+	$(':text').spinner({
+		min: 8, 
+		max: 72,
+		step: 2,
+		spin: onSpin
+	});
+	
+	$(':text').spinner('value', 20);
+});
+
+function onSpin() {
+	var size = $(':text').spinner('value');
+	$('div').css('font-size', size + 'px');
+}
+
+</script>
+</head>
+
+<body>
+	<div>I Miss You</div><br>
+	Font Size: <input type="text" size="5" readonly>
+</body>
+</html>

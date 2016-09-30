@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Rounded Corners</title>
+<style>
+	#container {
+		border: solid 2px  crimson;
+		width: 450px;
+		border-radius: 15px;
+		background: lightgray;
+		text-align: center;
+	}
+	#top {
+		font: 24px tahoma;
+		color: cyan;
+		border-top-left-radius: 12px;
+		border-top-right-radius: 12px;
+	}
+	#bottom {
+		border-bottom-left-radius: 12px;
+		border-bottom-right-radius: 12px;		
+	}
+	#top, #bottom {
+	 	width: auto;
+		background: royalblue;
+		padding: 5px;
+	}
+	img {
+		height: 100px;
+		margin: 10px 5px;
+		border-radius: 10px;
+	}
+	button {
+		border-radius: 10px;
+		background: tomato;
+		padding: 5px;
+		width: 80px;
+	}
+</style>
+</head>
+
+<body>
+	<div id="container">
+    	<div id="top">Rounded Corners</div>
+    	<img src="penguins.jpg">
+    	<img src="tulips.jpg">
+        <img src="koala.jpg">
+        <div id="bottom">
+        	<button>OK</button>
+            <button>Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

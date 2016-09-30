@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>event.target</title>
+<style>
+	div {
+		border: solid 2px red;
+		padding: 3px;
+		font-size: 20px;
+		margin: 10px;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('button').click(function(event) {
+		var size = $(event.target).text();
+		$('div').css('font-size', size);
+	});
+});
+</script>
+</head>
+
+<body>
+	<div>รักและคิดถึง</div>
+    Font Size:
+    <button>20px</button>
+	<button>30px</button>
+	<button>40px</button>
+    <button>50px</button>
+</body>
+</html>

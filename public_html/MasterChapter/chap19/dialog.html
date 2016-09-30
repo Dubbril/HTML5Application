@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI: Dialog</title>
+<link href="../jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+<style>
+	#dlg {
+		display: none;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jquery-ui-1.10.3.custom.min.js"> </script>
+<script>
+$(function() {
+		
+	//$('button').click(function() {
+		
+	//	$('#dlg').dialog("open");
+		/*
+	if($('#dlg').dialog("isOpen")) {
+		$('#dlg').dialog("close");
+	}
+	else {
+		$('#dlg').dialog("open");
+	} */
+	
+	$('#dlg').dialog({
+		modal: true,
+		buttons: [
+			{
+				text: 'OK',
+				click: function() {
+					window.location = 'www.example.com';
+				}
+			}, 
+			{
+				text: 'Cancel',
+				click: function() { 
+					$(this).dialog('close');
+				}
+			}
+		]
+		
+	});
+	
+	//});
+});
+</script>
+</head>
+
+<body>
+<div id="dlg">��ҹ�׹�ѹ�����觫����Թ��ҹ���������</div>
+<!--<div id="login">
+Login: <input type="text"><br>
+Pswd: <input type="password"> 
+<button type="butto">OK</button> -->
+</div>
+</body>
+</html>

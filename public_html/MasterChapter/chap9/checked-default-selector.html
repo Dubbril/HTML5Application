@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>:checked & :default</title>
+<style>
+	:checked, :default{
+		outline: solid 2px coral;
+	}
+	:checked + span {
+		background: #bdf;
+		color: red;
+	}
+</style>
+</head>
+
+<body>
+<form>
+	<input type="radio" name="browser" checked >Chrome<br>
+    <input type="radio"  name="browser" >Firefox<br>
+    <input type="radio"  name="browser" >IE<br>
+    <br>
+    <input type="checkbox"><span>ยอมรับข้อตกลง</span>
+    <br><br>
+    <button>OK</button><button type="reset">Reset</button>
+</form>
+</body>
+</html>

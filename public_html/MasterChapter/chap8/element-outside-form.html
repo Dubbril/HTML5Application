@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Elements outside form</title>
+</head>
+
+<body>
+ชื่อ: <input type="text" name="name" form="frm">
+ที่อยู่: <textarea name="address" form="frm"></textarea>
+
+<form id="frm" method="post" action="formecho.php">
+</form>
+
+<button type="submit" form="frm">ส่งข้อมูล</button>
+</body>
+</html>

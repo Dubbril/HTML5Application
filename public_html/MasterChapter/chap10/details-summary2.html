@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Details - Summary</title>
+<style>
+	details  {
+		border: solid 1px gray;
+		border-radius: 7px 7px 0px 0px;
+		margin: 10px 0px;		
+	}
+	details > summary {
+		color: blue;
+		background: #cdf;
+		border-radius: 5px 5px 0px 0px;
+		padding-left: 5px;
+	}
+	details > summary:hover {
+		color: red;
+		cursor: pointer;
+	}
+	details > div {
+		padding: 10px;
+	}
+	details  > div > img {
+		width: 50px;
+		float: left;
+		margin: 0px 10px 5px 0px;
+	}
+</style>
+</head>
+
+<body>
+<details>
+	<summary>HTML5</summary>
+	<div>
+    	<img src="html5.gif">
+ 		HTML5 will be the new standard for HTML.
+		The previous version of HTML, HTML 4.01, came in 1999. The web has changed a lot since then.
+		HTML5 is still a work in progress. However, the major browsers support many of the new HTML5 elements and APIs...
+   	 	<br>(from: w3schools.com) 
+	</div> 	
+</details>
+<details>
+	<summary>CSS3</summary>
+	<div>
+    	<img src="css3.gif">
+    	Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation semantics (the look and formatting) 
+    	of a document written in a markup language. Its most common application is to style web pages written in HTML and XHTML...
+   		<br>(from: wikipedia.com) 
+ 	</div>
+</details>
+</body>
+</html>

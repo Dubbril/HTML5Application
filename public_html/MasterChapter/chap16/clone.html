@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>clone()</title>
+<style>
+	input[type="text"] {
+		display: block;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script>
+$(function() {
+	$('#bt-add').click(function() {
+		var input  = $('#container > input[type=text]:last').clone();
+		$('#container').append(input);
+	});
+});
+</script>
+</head>
+
+<body>
+ 	หัวข้อโพล: <input type="text" name="topic" size="40"><br>
+ 	ตัวเลือก: <button type="button" id="bt-add">+</button><br>
+ 	<div id="container">
+	 	<input type="text" name="choice[]">
+	 	<input type="text" name="choice[]">
+ 	</div>
+</body>
+</html>

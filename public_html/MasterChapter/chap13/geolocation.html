@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>geolocation</title>
+<script>
+window.onload = function() {
+	navigator.geolocation.getCurrentPosition(position);
+}
+
+function position(pos) {
+	var lat =   pos.coords.latitude;	
+	var lon = 	pos.coords.longitude;
+	
+	var msg = '<h4>ตำแหน่งที่ท่านอยู่ในขณะนี้คือ<h4>';
+	msg +=		'Latitude: ' + lat + '<br>';
+	msg +=		'Longitude: ' + lon;
+	document.write(msg);
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>

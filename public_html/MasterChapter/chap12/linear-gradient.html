@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>canvas</title>
+<style>
+	canvas { border: dotted 2px  silver;  }
+</style>
+<script>
+window.onload = function() {
+	var cv = document.getElementById('cv');
+	var ctx = cv.getContext('2d');
+	
+	var grd=ctx.createLinearGradient(0, 0, 200, 0);
+	grd.addColorStop(0, 'skyblue');
+	grd.addColorStop(1, 'white');
+	ctx.fillStyle = grd;
+	ctx.fillRect(20, 20 , 200, 50);
+	
+	grd=ctx.createLinearGradient(0, 0, 0, 200);
+	grd.addColorStop(0, 'skyblue');
+	grd.addColorStop(0.7, 'pink');
+	grd.addColorStop(1.0, 'white');
+	ctx.fillStyle = grd;
+	ctx.fillRect(220, 20 , 50, 200);
+	
+	grd=ctx.createLinearGradient(0, 0, 200, 0);
+	grd.addColorStop(0, 'skyblue');
+	grd.addColorStop(0.8, 'pink');
+	ctx.font = 'bold 60px tahoma';
+	ctx.lineWidth = 3;
+	ctx.strokeStyle = grd;
+	ctx.strokeText('Hello!', 20, 150);
+}
+</script>
+</head>
+
+<body>
+	<canvas id="cv" width="300" height="220"> </canvas>
+</body>
+</html>

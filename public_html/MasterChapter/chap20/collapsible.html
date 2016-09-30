@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Mobile</title>
+<link rel="stylesheet" href="../jqm/jquery.mobile-1.3.1.min.css">
+<style>
+	img {
+		width: 50px;
+		float: left;
+		margin-right: 10px;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"> </script>
+<script src="../jqm/jquery.mobile-1.3.1.min.js"> </script>
+</head>
+
+<body>
+<div data-role="page" data-theme="b">
+	<div data-role="header"><h1>jQuery Mobile</h1></div>
+    <div data-role="content">
+   <div data-role="collapsible-set" data-content-theme="e" data-theme="b" data-mini="true">
+		<div data-role="collapsible" data-collapsed="true">
+        	<h1>jQuery</h1>
+            	<img src="jquery.gif">
+                jQuery is a JavaScript Library.<br>
+				jQuery greatly simplifies JavaScript programming.
+         </div>
+         
+		<div data-role="collapsible">
+        	<h1>HTML5</h1>
+            <img src="html5.gif">
+            HTML5 will be the new standard for HTML.<br>
+ 			HTML5 is still a work in progress. 
+		</div>
+       <div data-role="collapsible">
+        	<h1>CSS3</h1>
+            <img src="css3.gif">
+             CSS is used to control style and page layout.<br>
+			CSS3 is the latest standard for CSS.
+		</div>
+   	</div>
+    </div>
+</div>
+</body>
+</html>

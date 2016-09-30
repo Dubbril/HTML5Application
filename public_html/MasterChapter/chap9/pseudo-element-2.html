@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pseudo element</title>
+<style>
+	a { color: blue; }
+	
+	a::before { 
+		content: "ไปยังเว็บไซต์: ";
+	}
+	a::after {
+		content: " >>";
+	}
+	[required] + span::after {
+		content: "*";
+		color: red;
+	}
+</style>
+</head>
+
+<body>
+ 	<a href="http://www.google.com">Google</a><br>
+ 	<a href="http://www.w3c.org">W3C</a><br>
+ 	<a href="http://www.yahoo.com">Yahoo</a> 
+ 	<br><br>
+    ช่องที่มี * หมายถึงต้องใส่ข้อมูลเสมอ:<br>
+ 	<input type="text" required><span></span><br>
+ 	<input type="text"><span></span><br>
+ 	<input type="text" required><span></span>
+</body>
+</html>

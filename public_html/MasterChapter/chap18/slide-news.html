@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Effect: slide-news</title>
+<style>
+	#container {
+		background: #cdf;	
+		height: 24px;
+		width: 600px;
+		padding: 3px;
+	}
+	#news {
+		font: 18px tahoma;
+		text-align: center;
+		display: none;
+	}
+</style>
+<script src="../jquery-2.0.0.min.js"></script>
+<script>
+var news = [
+	'ด่วน! jQuery เปิดให้ดาวน์โหลดเวอร์ชั่นใหม่แล้ว',
+	'Apple เผยยอดขาย iPhone และ iPad เหนือความคาดหมาย',
+	'พบแหล่งน้ำมันแห่งใหม่คาดมีจำนวนน้ำมันมหาศาลบนดาวอังคาร'];
+	
+var x = 0;	
+var t = 0;
+
+$(function() {
+	setTimeout(slide, 500);
+});
+
+function slide() {
+	//ถ้าในขณะนั้นข้อความถูกซ่อน ต่อไปคือการแสดงข้อความถัดไป
+	//เราจะตั้งเวลาให้แสดงข้อความ 5 วินาที
+	if($('#news').css('display') == "none") {
+		t = 5000;
+		//นำข้อความที่จะแสดงถัดมากำหนดให้แก่อิลิเมนต์
+		$('#news').html(news[x]);
+	
+		x++;	//เพิ่มลำดับเพื่อชี้ไปยังข้อความต่อไป
+		
+		if(x == news.length) {	//ถ้ามาถึงข้อความสุดท้ายให้กลับไปเริ่มใหม่
+			x = 0;
+		}
+	}
+	//ถ้าในขณะนั้นกำลังแสดงข้อความ ต่อไปคือการซ่อน
+	//เราจะตั้งเวลาให้ซ่อนข้อความเพียง 1.5 วินาที ให้น้อยกว่าเวลาที่แสดงข้อความ
+	else {	
+		t = 1500;
+	}
+	
+	$('#news').slideToggle(1000);
+
+	setTimeout(slide, t);
+}
+</script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="news"></div>
+	</div>
+</body>
+</html>

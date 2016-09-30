@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>session storage</title>
+<script>
+window.onload = function() {
+	var container = document.getElementById('container');
+ 	var numElem = container.children.length;
+	
+	for(i = 0; i < numElem; i++) {
+		var check = container.children[i];
+		
+		check.onchange = function() {
+			if(this.checked) {
+				sessionStorage.setItem(this.getAttribute('id'), this.value);
+			}
+			else {
+				sessionStorage.removeItem(this.getAttribute('id'));
+			}
+		}
+	}
+	
+	var button = document.getElementById('button');
+	button.onclick = function() { 
+	 	location.href = 'session-storage-2.html'; 
+	}
+}
+</script>
+</head>
+
+<body>
+<form>
+	<h4>รายการสินค้า</h4>
+    	<div id="container">
+    		<input type="checkbox" id="p1" value="iPhone">iPhone<br>
+		<input type="checkbox" id="p2" value="iPad">iPad<br>
+    		<input type="checkbox" id="p3" value="iPod">iPod<br>
+    		<input type="checkbox" id="p5" value="iMac">iMac<br>
+    		<input type="checkbox" id="p4" value="iWatch">iWatch
+    	</div><br>
+    	<button type="button" id="button">สั่งซื้อ</button>
+</form>
+</body>
+</html>
